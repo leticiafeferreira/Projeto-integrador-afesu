@@ -49,7 +49,7 @@
   transition: 0.5s;
   margin: 10px;
   border: 2px solid var(--contrast-color);
-  color: var(--contrast-color);
+  color: var(--title-color);
 }
 
 .call-to-action .cta-btn:hover {
@@ -89,25 +89,41 @@ img {
 
 /*====  VARIABLES ============================ */
 :root {
-  --header-height: 4.5rem;
-
-  /* colors */
-  --hue: 159;
-  --base-color: #AF6A65;
-  --base-color-second: #D4A99E;
-  --base-color-alt: #6A4E4D;
-  --title-color: #6A4E4D;
-  --text-color: #0f0f0f;
-  --text-color-light: #F4F0E6;
-  --body-color: #fffcf5;
-
   /* fonts */
   --title-font-size: 1.875rem;
   --subtitle-font-size: 1rem;
 
   --title-font: 'Poppins', sans-serif;
   --body-font: 'DM Sans', sans-serif;
+
+  --header-height: 4.5rem;
 }
+
+/* TEMA DARK */
+:root,
+:root[data-theme='dark'] {
+  --base-color: #AF6A65;
+  --base-color-second: #D4A99E;
+  --base-color-alt: #6A4E4D;
+  --title-color: #AF6A65;
+  --text-color: #fffcf5;
+  --text-color-light: #F4F0E6;
+  --body-color: #181818;
+}
+
+:root[data-theme='light'] {
+  /* colors */
+  --hue: 159;
+  --base-color: #AF6A65;
+  --base-color-second: #D4A99E;
+  --base-color-alt: #6A4E4D;
+  --title-color: #AF6A65;
+  --text-color: #0f0f0f;
+  --text-color-light: #F4F0E6;
+  --body-color: #fdf5ff;
+}
+
+/* ============================ */
 
 .container {
   margin-left: 1.5rem;
@@ -242,6 +258,18 @@ nav.show div.icon-close {
   top: 1.5rem;
 }
 
+:root[data-theme='light'] .header-toggle i {
+  color: var(--base-color);
+  z-index: 99999;
+  cursor: pointer;
+}
+
+:root[data-theme='dark'] .header-toggle i {
+  color: var(--base-color-alt);
+  z-index: 99999;
+  cursor: pointer;
+}
+
 /*====  HOME ============================ */
 
 
@@ -252,9 +280,14 @@ main {
 }
 
 /*====  LOGO ============================ */
-.logo {
+:root[data-theme='dark'] .logo {
   font: 700 1.31rem var(--title-font);
-  color: var(--title-color);
+  color: var(--base-color-second);
+}
+
+:root[data-theme='light'] .logo {
+  font: 700 1.31rem var(--title-font);
+  color: var(--base-color-alt);
 }
 
 .logo span {
@@ -265,13 +298,18 @@ main {
   color: var(--body-color);
 }
 
-/* titulo */
+.chefs {
+  padding-bottom: 50px;
+}
+
 .chefs .section-title  {
   padding-top: 120px;
   padding-bottom: 30px;
 }
 
 .chefs .section-title h2 {
+  align-items: center;
+  text-align: center;
   font-size: 40px;
   font-family: "DM Sans", sans-serif;
   color: var(--title-color);
@@ -436,6 +474,7 @@ main {
   nav .icon-menu {
     display: none;
   }
+
 
   /* layout */
   main {

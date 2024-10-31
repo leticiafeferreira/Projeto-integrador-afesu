@@ -1,3 +1,15 @@
+document.getElementById('toggleTheme').addEventListener('click', function() {
+  const htmlElement = document.documentElement;
+  const currentTheme = htmlElement.getAttribute('data-theme');
+  console.log('Tema atual:', currentTheme); // Adicione este log
+  if (currentTheme === 'dark') {
+      htmlElement.setAttribute('data-theme', 'light');
+  } else {
+      htmlElement.setAttribute('data-theme', 'dark');
+  }
+});
+
+
 /*  abre e fecha o menu quando clicar no icone: hamburguer e x */
 const nav = document.querySelector('#header nav')
 const toggle = document.querySelectorAll('nav .toggle')
