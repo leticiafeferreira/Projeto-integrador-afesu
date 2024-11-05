@@ -236,9 +236,19 @@ nav.show ul.grid {
 
 /* toggle menu */
 .toggle {
-  color: #ff0000;
+  color: var(--base-color);
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+/* toggle menu */
+#toggleTheme {
+  font-size: 1.5rem;
+  color: var(--base-color);
+  cursor: pointer;
+  transition: ease-in-out .4s;
+  float: right;
+  position: relative;
 }
 
 nav .icon-close {
@@ -325,7 +335,7 @@ main {
   padding: 5px;
   content: "";
   position: absolute;
-  left: 168px;
+  left: 610px;
   top: -20px;
   z-index: -2;
 }
@@ -335,6 +345,7 @@ main {
   color:  var(--text-color);
   font-family: 'DM sans', sans-serif;
   font-weight: 300px;
+  text-align: center;
 }
 
 
