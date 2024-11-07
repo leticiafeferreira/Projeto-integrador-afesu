@@ -1,3 +1,4 @@
+
 document.getElementById('toggleTheme').addEventListener('click', function() {
   const htmlElement = document.documentElement;
   const currentTheme = htmlElement.getAttribute('data-theme');
@@ -120,3 +121,5 @@ window.addEventListener('scroll', function () {
   backToTop()
   activateMenuAtCurrentSection()
 })
+
+
